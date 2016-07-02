@@ -12,7 +12,7 @@
   .mdl-navigation__link {
     flex: 1;
     line-height: 42px;
-    color: $purple;
+    color: $primary;
   }
 
   .is-active {
@@ -27,7 +27,7 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      background-color: rgb(76, 175, 80);
+      background-color: $secondary;
       left: 15%;
     }
   }
