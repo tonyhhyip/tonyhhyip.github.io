@@ -1,0 +1,24 @@
+extends ../layouts/default.jade
+block link
+    a.mdl-navigation__link(href="/") About Me
+    a.mdl-navigation__link.is-active(href="/works.html") My Work
+    a.mdl-navigation__link(href="/contact.html") Contact Me
+
+block drawer
+    a.mdl-navigation__link(href="/") About Me
+    a.mdl-navigation__link.is-active(href="/works.html") My Work
+    a.mdl-navigation__link(href="/contact.html") Contact Me
+
+block content
+    .mdl-grid.mdl-cell.mdl-cell--12-col.mdl-cell--4-col-tablet.mdl-card.mdl-shadow--4dp
+        .mdl-card__media.mdl-cell.mdl-cell--12-col-tablet
+            img.article-image(src='images/sticker.png' border='0' alt='Telegram Sticker')
+        .mdl-cell.mdl-cell--8-col
+            h2.mdl-card__title-text Telegram Sticker
+            .mdl-card__supporting-text.padding-top
+                span Credit to Carmen Chui
+            .mdl-card__supporting-text.no-left-padding
+                p It is a Telegram Sticker based on me. It is available on Telegram now!
+                p I hope you will like the sticker.
+            .mdl-card__actions
+                a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js.ripple-effect.mdl-button--primary(href="https://telegram.me/addstickers/TonyYip") Add Sticker

@@ -11,9 +11,17 @@
   padding: 0;
 }
 
+.padding-top {
+  padding: 10px 0 0;
+}
+
 img.article-image {
   margin: auto;
   display: block;
   max-width: 300px;
   width: 100%;
+}
+
+footer {
+  background-size: cover;
 }
