@@ -1,0 +1,32 @@
+.profile-header {
+  position: relative;
+  background: url(../images/bg.jpg) no-repeat center;
+
+  .mdl-layout__header-row {
+    padding: 0;
+    justify-content: center;
+  }
+
+  .mdl-layout__drawer-button {
+    background-color: rgba(197, 197, 197, 0.44);
+  }
+
+  .profile-logo + .mdl-layout__title {
+    font-weight: 700;
+    color: $green;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    border-radius: 4px;
+    padding: 5px;
+  }
+}
+
+.mdl-layout__title {
+  font-size: 14px;
+  text-align: center;
+  font-weight: 300;
+}
+
+.is-compact .mdl-layout__title span {
+  display: none;
+}
