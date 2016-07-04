@@ -4,6 +4,7 @@ import gulp from 'gulp';
 import jade from 'gulp-jade';
 import cleanCss from 'gulp-clean-css';
 import sass from 'gulp-sass';
+import uglify from 'gulp-uglify';
 import pug from 'pug';
 
 let server;
@@ -18,6 +19,13 @@ gulp.task('style', () => {
 		.pipe(sass())
 		.pipe(cleanCss())
 		.pipe(gulp.dest('./public/css'))
+		.on('end', reload);
+});
+
+gulp.task('js', () => {
+	gulp.src('./assets/js/**/*.js')
+		.pipe(uglify())
+		.pipe(gulp.dest('./public'))
 		.on('end', reload);
 });
 
@@ -52,8 +60,12 @@ gulp.task('watch', () => {
 		'./assets/pages/**/*.jade',
 		'./assets/layouts/**/*.jade'
 	], ['page']);
+
+	gulp.watch([
+		'./assets/js/**/*.js'
+	], ['js']);
 });
 
-gulp.task('build', ['page', 'style', 'image']);
+gulp.task('build', ['page', 'style', 'image', 'js']);
 
 gulp.task('dev', ['build', 'server', 'watch']);
