@@ -4,8 +4,12 @@ import gulp from 'gulp';
 import jade from 'gulp-jade';
 import cleanCss from 'gulp-clean-css';
 import sass from 'gulp-sass';
+import browserify from 'browserify';
+import source from 'vinyl-source-stream';
+import babelify from 'babelify';
+import {log} from 'gulp-util';
+import streamify from 'gulp-streamify';
 import uglify from 'gulp-uglify';
-import pug from 'pug';
 
 let server;
 
@@ -23,10 +27,19 @@ gulp.task('style', () => {
 });
 
 gulp.task('js', () => {
-	gulp.src('./assets/js/**/*.js')
-		.pipe(uglify())
-		.pipe(gulp.dest('./public'))
-		.on('end', reload);
+  browserify({
+    entries: './assets/js/app.js',
+    extensions: ['.js'],
+    debug: true
+  })
+    .require('jquery', {expose: 'jQuery'})
+    .transform(babelify.configure())
+    .bundle()
+    .on('error', log)
+    .pipe(source('app.js'))
+    .pipe(streamify(uglify()))
+    .pipe(gulp.dest('./public'))
+    .on('end', reload);
 });
 
 gulp.task('page', () => {

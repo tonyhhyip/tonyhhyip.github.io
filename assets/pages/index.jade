@@ -1,21 +1,18 @@
 extends ../layouts/default.jade
-block link
-    a.mdl-navigation__link.is-active(href="/") About Me
-    a.mdl-navigation__link(href="/works.html") My Work
-    a.mdl-navigation__link(href="/contact.html") Contact Me
 
-block drawer
-    a.mdl-navigation__link.is-active(href="/") About Me
-    a.mdl-navigation__link(href="/works.html") My Work
-    a.mdl-navigation__link(href="/contact.html") Contact Me
+block title
+    span About Me
 
 block content
-    #page-home.mdl-cell.mdl-cell--12-col.mdl-card.mdl-shadow--4dp
-        .mdl-card__title
-            h2.mdl-card__title-text About Me
-        .mdl-card__media
-            img.article-image(border="0" alt="" src="./images/header.jpg")
-        .mdl-grid.profile-copy
-            h3.mdl-cell.mdl-cell--12-col.mdl-typography--headline Introduction
-            .mdl-cell.mdl-cell--8-col.mdl-card__supporting-text.no-padding
+    .card
+        .card-main
+            .card-header
+                .card-header-side.pull-left
+                    .avatar
+                        img(alt="My sticker" src="./images/sticker.png")
+                .card-inner
+                    span.card-heading About Me
+            .card-img
+                img.article-image(alt="My cover photo" src="./images/header.jpg")
+            .card-inner
                 p I love Maths and Hacking. For Maths, I love Algebra and Calculus. For Hacking, I am good at PHP and node.js.

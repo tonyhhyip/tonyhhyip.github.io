@@ -1,15 +1,19 @@
-header.mdl-layout__header.mdl-layout__header--waterfall.profile-header
-    .mdl-layout__header-row.profile-logo-row
-        span.mdl-layout__title
-            .profile-logo
-            span.mdl-layout__title About Me -Tony Yip
+header.header.header-transparent.header-waterfall
+    ul.nav.nav-list.pull-left
+        li
+            a(data-toggle="menu" href="#ui_menu")
+                span.material-icon.material-icon-lg menu
+                span.header-logo.header-affix-hide.margin-left-no.margin-right-no(data-spy="affix" data-offset-top="213" href="./") &emsp;About Me
+    span.header-logo.header-affix.margin-right-no.margin-left-no(data-spy="affix" data-offset-top="213")
+        block title
 
-    .mdl-layout__header-row.profile-nav-row.mdl-layout--large-screen-only
-        nav.mdl-navigation.mdl-typography--body-1-force-preferred-font
-            block link
-            a.mdl-navigation__link(href="https://licson.net/post/author/tonyhhyip/" target="_blank") Blog
-
-.mdl-layout__drawer.mdl-layout--small-screen-only
-    nav.mdl-navigation.mdl-typography--body-1-force-preferred-font
-        block drawer
-        a.mdl-navigation__link(href="https://licson.net/post/author/tonyhhyip/" target="_blank") Blog
+nav.menu#ui_menu(aria-hidden="true" tabindex="-1")
+    .menu-scroll
+        .menu-content
+            a.menu-logo(href="./") About Me
+            ul.nav
+                li
+                    a.waves-attach(href="./") Introduction
+                    a.waves-attach(href="./works.html") My Works
+                    a.waves-attach(href="./contact.html") Contact Me
+                    a.waves-attach(href="https://licson.net/post/author/tonyhhyip/" target="_blank") Blog
